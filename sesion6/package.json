@@ -1,0 +1,19 @@
+{
+  "name": "sesion6",
+  "version": "1.0.0",
+  "description": "Este es u ejemplo para el manejo de modulos",
+  "main": "ejemplo3.js",
+  "type" : "module",
+  "scripts": {
+    "test": "ninguno"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Ivan Alvarado",
+  "license": "ISC"
+}

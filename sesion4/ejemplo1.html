@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ejemplo1 (Peticion a un recurso externo con XHR (XMLHttpRequest))</title>
+    </head>
+    <body>
+        <script>
+            let almacenamiento = window.localStorage;
+            let nombreEquipo = "";
+            const solicitud = new XMLHttpRequest();
+            solicitud.open('GET', 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json');
+            solicitud.responseType = "json";
+            solicitud.send();
+            solicitud.onload = function(){
+                let cont = solicitud.response;
+                almacenamiento.setItem("superheroes", JSON.stringify(cont.members));
+            }
+            document.write("hola");
+
+            function MostrarInformacion(){
+                let ls = window.localStorage;
+                let lst = JSON.parse(ls.getItem("superheroes"));
+                lst.forEach(el => {
+                    document.write(el.name + "<br>");
+                });
+
+            }
+        </script>
+        <a href="javascript:MostrarInformacion()">Ver superheroes</a>
+    </body>
+</html>

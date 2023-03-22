@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ejemplo4</title>
+</head>
+<body>
+    <h1>Ejemplo4</h1>
+    <script>
+        let n1, n2, n3, my, cn, mn;
+        n1 = Number(prompt("Digite el primer numero :"));
+        n2 = Number(prompt("Digite el segundo numero :"));
+        n3 = Number(prompt("Digite el tercer numero :"));
+        if (n1 > n2){
+            my = n1;
+            mn = n2;
+        }
+        else{
+            my = n2;
+            mn = n1;
+        }
+        if (my > n3){
+            if (mn > n3){
+                cn = mn;
+                mn = n3;
+            }
+            else{
+                cn = n3;
+            }
+        }
+        else{
+            cn = my;
+            my = n3;
+        }
+        document.write("El mayor es : " +my);
+    
+    </script> 
+</body>
+</html>

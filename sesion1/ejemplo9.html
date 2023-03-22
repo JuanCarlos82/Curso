@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ejemplo9</title>
+</head>
+<body>
+    <h1>Ejemplo9</h1>
+    <script>
+        let num = Number(prompt("Digite un numero : "));
+        let esPrimo = true;
+        let contador = 2;
+        while (contador < (num/2) && esPrimo){
+            if (num%contador==0){
+                esPrimo = false;
+            }
+            else {
+                contador++;
+            }
+        }
+        if (esPrimo)
+            document.write("El numero es Primo");
+        else
+            document.write("El numero No es primo");
+    </script> 
+</body>
+</html>

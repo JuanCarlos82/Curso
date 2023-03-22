@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ejemplo8</title>
+</head>
+<body>
+    <h1>Ejemplo8</h1>
+    <script>
+        let suma=0;
+        let num1 = Number(prompt("Digite el primer numero : "));
+        let num2 = Number(prompt("Digite el segundo numero : "));
+        while (num1>0){
+            if (num1%2!=0){
+                suma += num2;
+            }
+            num1 = Math.trunc(num1/2);
+            num2 = num2*2;
+        }
+            document.write("El producto es : " + suma);
+    </script> 
+</body>
+</html>

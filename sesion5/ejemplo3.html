@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+        <style>
+            .div{
+                background-color: blue;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>         
+        <script>
+            /*
+            $.ajax({
+                url: 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json',
+                data: {id:1},
+                type: 'GET',
+                dataType: 'json',
+                success: function(json){
+                    $("<h2/>").text(json.squadName).appendTo('body');
+                    $("<div class='div'/>").html(json.secretBase).appendTo('body');
+                },
+                error : function(xhr, satus){
+                    console.log("error");
+                },
+                complete : function(xhr, status){
+                    console.log("peticion realizada");
+                }
+            });
+            */
+            /*
+            $.get(
+                'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json',
+                {id:1},
+                function(rp){
+                    console.log(rp);
+                }
+            );
+            */
+           $.getJSON('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json', function(rp){
+                $.each(rp, function(k, v){
+                    console.log(k +  " : " + v);
+                })
+           });
+        </script>
+    </head>
+    <body>
+        <script>
+            function Llamada(){
+                fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+                .then((rp) => rp.json())
+                .then((d) => console.log(d));
+            }
+        </script>
+        <div>
+            <h1>Texto</h1>
+        </div>
+    </body>
+</html>

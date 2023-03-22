@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ejemplo10</title>
+    </head>
+    <body>
+        <script>
+            //Funciones son miembros de primera clase
+            //1. Una funcion se puede asignar a una variable
+            function Ejemplo1(){
+                return "Hola soy la funcion 1";
+            }
+            let variable1 = Ejemplo1();
+            document.write(variable1 + "<br>");
+            //Asignacion de una funcion anonima
+            let variable2 = function(){
+                return "Hola soy la funcion anonima";
+            }
+            document.write(variable2() + "<br>");
+            //Asignacion de una funcion anonima en notacion Lambda (ArrowFunction, Funcion flecha)
+            let variable3 = () => {
+                return "Hola soy la funcion anonima (ArrowFunction)";
+            }
+            document.write(variable3() + "<br>");
+            //Asignacion de una funcion anonima con la definicion del constructor
+            let variable4 = Function("a", "return 'Hola soy la funcion anonima del constructor ' + a");
+            document.write(variable4(1) + "<br><br>");
+            
+            //2. Una funcion se puede enviar como parametro a otra funcion
+            function Ejemplo2(){
+                return "Hola soy la funcion ejemplo2";
+            }
+            function ConsumirEjemplo2(p1, p2){
+                return p1 + " " + p2;
+            }
+            document.write(ConsumirEjemplo2(Ejemplo2(), "Hola") + "<br><br>");
+            
+            //3. Una funcion puede devolver otra funcion
+            function Ejemplo3(){
+                let x=10;
+                return function(){
+                    return "Hola soy una funcion interna";
+                }
+            }
+            document.write(Ejemplo3()() + "<br>");
+            //Ejemplo de devolucion de funcion
+            function OperacionExponente(a, b){
+                function cuadrado(x){
+                    return x*x;
+                }
+                return cuadrado(a) + cuadrado(b);
+            }
+            document.write(OperacionExponente(2,3));
+
+        </script>
+    </body>
+</html>

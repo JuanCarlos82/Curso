@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            /*
+            let promesa = new Promise(function(resolve, reject){
+                function Saludar(){
+                    resolve("Hola Mundo");
+                }
+                setTimeout(Saludar, 5000);
+            })
+            console.log(promesa);
+            function Estado(){
+                console.log(promesa);
+            }
+            */
+           /*
+            let promesa = new Promise((resolve, reject)=>{
+                if (false){
+                    resolve("Ha funcionado");
+                }
+                else{
+                    reject("Hay un error")
+                }
+           });
+
+           promesa
+           .then((rp) =>{
+                console.log("Response " + rp);
+           })
+           .catch((err)=>{
+                console.log("Error " + err);
+           })
+           */
+
+           let promesa = new Promise((rs, rj)=>{
+                console.log("Promesa pendiente");
+                setTimeout(()=>{
+                    rs("Promesa resuelta");
+                }, 2001);
+
+                setTimeout(()=>{
+                    rj("Promesa rechazada");
+                }, 2000);
+           });
+
+           promesa
+           .then((rp)=>{
+                console.log("Response" + rp);
+           })
+           .catch((err)=>{
+                console.log("Error" +  err);
+           });
+        </script>
+        <a href="javascript:Estado()">Consultar estado de la promesa</a>
+    </body>
+</html>

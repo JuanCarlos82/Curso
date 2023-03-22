@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ejemplo2</title>
+        <link rel="stylesheet" href="estilosE2.css">
+        <script src="funcionesE2.js"></script>
+    </head>
+    <body onload="javascript:crearTabla()">
+        <div id="Principal">
+            <fieldset>
+                <div id="tabla"></div>
+                <p>
+                    <input type="button" value="Agregar" 
+                    onclick="Agregar()">
+                    <input type="button" value="Eliminar"
+                    onclick="Eliminar()">
+                </p>
+            </fieldset>
+        </div>
+        <div id="Captura">
+            <fieldset>
+                <legend>Capturando datos del cliente</legend>
+                <summary>
+                    <form name="frmCaptura">
+                        <input type="text" name="id" 
+                        placeholder="Digite el id del cliente"><br>
+                        <input type="text" name="nom" 
+                        placeholder="Digite el nombre del cliente"><br>
+                        <input type="text" name="ape" 
+                        placeholder="Digite el apellido del cliente"><br>
+                        <input type="button" value="Aceptar" 
+                        onclick="AceptarForm()">
+                        <input type="button" value="Cancelar"
+                        onclick="CancelarForm()">
+                    </form>
+                </summary>
+            </fieldset>
+        </div>
+    </body>
+</html>

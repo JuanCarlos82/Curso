@@ -1,0 +1,17 @@
+fieldset{
+    margin : 0 auto;
+    width: 300px;
+    border-radius: 5px;
+    text-align: center;
+}
+table, tr, td{
+    width: 300px;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px;
+}
+#cabecera{
+    background-color: rgb(46, 96, 139);
+    color : white
+}

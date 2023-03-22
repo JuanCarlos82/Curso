@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ejemplo2 (Peticion a un recurso externo (Fetch))</title>
+    </head>
+    <body>
+        <script>
+            let ls = window.localStorage;
+            fetch('https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json')
+            .then(response => response.json())
+            .then(rp => {
+                ls.setItem("heroes", JSON.stringify(rp.members));
+            })
+
+            function Consultar(){
+                let lst = JSON.parse(ls.getItem("heroes"));
+                lst.forEach(element => {
+                    document.write(element.name + "<br>");
+                });
+            }
+        </script>
+        <a href="javascript:Consultar()">Consultar</a>
+    </body>
+</html>

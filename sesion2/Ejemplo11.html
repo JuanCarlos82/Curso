@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ejemplo11</title>
+    </head>
+    <body>
+        <script>
+            //Funciones de orden superior
+            //this como contexto de una funcion
+            function EjemploSuperior(){
+                this.variableInterna = "Hola";
+                this.Metodo1 = function(){
+                    return "Hola soy el metodo1";
+                }          
+            }
+            EjemploSuperior.prototype.Metodo2 = function(){
+                return "Hola soy el metodo 2";
+            }
+
+            let v1 = new EjemploSuperior();
+            console.log(v1);
+
+            //Ejemplo con el manejo de arrays
+            Array.prototype.MetodoPersonalizado = () =>  {
+                console.log("Hola soy el metodo personalizado del array");
+            }
+            function Mostrar(n){
+                console.log("Mostrar " + n);
+            }
+            let v2 = [1,2,3,4];
+            //v2.forEach(Mostrar);
+            v2.forEach((num) => {
+                console.log("Funcion anonima " + num);
+            });
+            v2.MetodoPersonalizado();
+
+
+            class Persona{
+                constructor(){
+                    this.atributo1 = "Atributo1";
+                    this.Metodo1 = function(){
+                        return "Hola soy un metodo del constructor";
+                    }
+                }
+                Metodo2(){
+                    return "Soy el metodo2";
+                }
+            }
+            Persona.prototype.Metodo3 = function(){
+                return "Soy el metodo 3";
+            }
+            //Ejemplo2 con clases
+            let v3 = new Persona();
+            console.log(v3);
+
+
+        </script>
+    </body>
+</html>

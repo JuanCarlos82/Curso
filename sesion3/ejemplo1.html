@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ejemplo1</title>
+        <link rel="stylesheet" href="estilos.css">
+        <script>
+            function Mostrar(){
+                let d = document.getElementById("d1");
+                let hijos = d.childNodes;
+                hijos.forEach((it)=>{
+                    if (it.nodeType == 1)
+                        console.log(it);
+                });
+                let nuevo = document.createElement("h2");
+                nuevo.textContent = "Nuevo titulo";
+                //nuevo.style.color = "blue";
+                nuevo.className = "Clase";
+
+                d.appendChild(nuevo);
+            }
+        </script>
+    </head>
+    <body>
+        <a href="javascript:Mostrar()">Hacer click</a>
+        <div id="d1">
+            <h1 class="Clase">Titulo1</h1>
+            <h1>Titulo2</h1>
+        </div>
+        <div id="d2">
+            <h1>Titulo3</h1>
+            <h1 class="Clase">Titulo4</h1>
+        </div>
+    </body>
+</html>

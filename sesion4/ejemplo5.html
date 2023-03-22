@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <div id="contenido"></div>
+        <script>
+            let divCont = document.getElementById("contenido");
+            function dibujarTabla(data){
+                document.write("<ul>");
+                data.forEach(element => {
+                    if (element.name != "")
+                        document.write("<li>"+ element.name + "<li>");
+                });
+                document.write("</ul>");
+            }
+            async function obtenerSuperHeroes(){
+                const result = await fetch("https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json");
+                const res = await result.json();
+                dibujarTabla(res.members);
+            }
+            obtenerSuperHeroes();
+            
+        </script>
+    </body>
+</html>

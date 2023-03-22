@@ -1,0 +1,31 @@
+<html lang="en">
+    <head>
+    </head>
+    <body>
+        <script>
+            function dibujarTabla(data){
+                document.write("<ul>");
+                data.forEach(element => {
+                    if (element.name != "")
+                        document.write("<li>"+ element.name + "<li>");
+                });
+                document.write("</ul>");
+            }
+
+            function llenarLocalStorage(data){
+                let ls = window.localStorage;
+                ls.setItem("superheroes",JSON.stringify(data))
+            }
+
+            async function obtenerSuperHeroes(){
+                const result = await fetch("https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json");
+                const res = await result.json();
+                dibujarTabla(res.members); 
+                llenarLocalStorage(res.members)
+                return res;
+            }
+            let rs = obtenerSuperHeroes();
+
+        </script>
+    </body>
+</html>

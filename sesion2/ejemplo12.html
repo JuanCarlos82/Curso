@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ejemplo12</title>
+    </head>
+    <body>
+        <script>
+            //Declarando arreglos
+            let v1 = new Array();
+            v1.push(1);
+            v1.push("Cadena");
+            v1.push(true);
+            v1.push({at1:0, at2:'Cadena'});
+
+            v1.forEach((element) => {
+                console.log("elemento " + element);
+                //console.log("indice " + index);
+                //console.log("arreglo " + array);
+            })
+
+
+            let v2 = [1, "Cadena", true, {at1:0, atd: "Cadena"}];
+            v2.forEach((item) => {
+                console.log(item);
+            });
+
+            //Los objetos String son inmutables
+            let cadena = "Hola Mundo";
+            console.log(cadena[0]);
+        </script>
+    </body>
+</html>

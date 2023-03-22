@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Ejemplo7</title>
+</head>
+<body>
+    <h1>Ejemplo7</h1>
+    <script>
+        let num = Number(prompt("Digite un numero : "));
+        let suma = 0;
+        for (x = (num-1); x>0; x--){
+            if(num%x==0){
+                suma += x;
+            }
+        }
+        if (num == suma)
+            document.write("El numero es perfecto");
+        else
+            document.write("El numero NO es perfecto");
+    </script> 
+</body>
+</html>

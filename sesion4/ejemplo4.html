@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function LlamadaPromesaConParametros(bandera){
+                return new Promise((resolve, reject)=>{
+                    if (bandera){
+                        resolve("Ha funcionado");
+                    }
+                    else{
+                        reject("Hay un error")
+                    }
+               });
+            }
+
+
+           LlamadaPromesaConParametros(false)
+           .then((rp) =>{
+                console.log("Response " + rp);
+           })
+           .catch((err)=>{
+                console.log("Error " + err);
+           })
+
+
+        </script>
+    </body>
+</html>

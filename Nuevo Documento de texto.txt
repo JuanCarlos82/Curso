@@ -1,0 +1,15 @@
+npm comando para crear proyecto en react
+
+npx create-react-app nombre-del-proyecto
+
+npm start --> Para correr proyecto
+
+npm install react-scripts ---> Cuando no esta la carpeta node_modules
+npm i firebase --> Instalando dependecias de Firebase
+npm i react-router-dom --> Este creo que es para detallar las rutas
+
+
+https://esteban-07.github.io/react-vite-basic-superheroes-project/
+
+28 presentación de proyectos jejejejeje
+Proyecto: Yo decido... Firebase, usestate, useefect, useform, usecontext, manejo de rutas, si quiero bootstrasp

@@ -1,24 +1,25 @@
 import 'bootstrap/dist/css/bootstrap.min.css'
 import { Container, Table, Button } from 'reactstrap';
-import { useCliente } from '../Hooks/useCliente';
+import { useTicket } from '../Hooks/useTicket';
 
 import React, { useState } from 'react';
 import {Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 
-export function ScreenListaCliente(args){
-    const {abrirDialogo, lstClientes, eliminarCliente} = useCliente();
+export function ScreenListaTicket(args){
+    const {abrirDialogo, lstTicket, eliminarTicket} = useTicket();
 
     const [modal, setModal] = useState(false);
     const toggle = () => setModal(!modal);
-    
+
     return (
+        
         <Container>
             <Table striped>
                 <thead>
                     <tr>
-                        <th>IdCliente</th>
                         <th>Nombre</th>
-                        <th>Apellido</th>
+                        <th>Correo</th>
+                        <th>Problema</th>
                         <th>
                             <Button color='btn btn-outline-primary' onClick={()=>abrirDialogo(1, null)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
                             <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
@@ -29,12 +30,12 @@ export function ScreenListaCliente(args){
                 </thead>
                 <tbody>
                 {
-                        (lstClientes.length > 0) ? (
-                            lstClientes.map((it, idx)=>(
+                        (lstTicket.length > 0) ? (
+                            lstTicket.map((it, idx)=>(
                                 <tr key={idx}>
-                                    <td>{it.Data.idCliente}</td>
-                                    <td>{it.Data.nombre}</td>
-                                    <td>{it.Data.apellido}</td>
+                                    <td>{it.Data.Nombre}</td>
+                                    <td>{it.Data.Correo}</td>
+                                    <td>{it.Data.Problema}</td>
                                     <td>
                                     <div class="btn-group" role="group" aria-label="Basic example">
                                         <Button color='btn btn-outline-secondary' onClick={()=>abrirDialogo(2, it)}><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
@@ -48,9 +49,9 @@ export function ScreenListaCliente(args){
                                         <Modal isOpen={modal} toggle={toggle} {...args}>
                                             <ModalHeader toggle={toggle}>Eliminar</ModalHeader>
                                                 <ModalBody>
-                                                    Seguro que desea eliminar al usuario???</ModalBody>
+                                                    Seguro que desea eliminar el ticket???</ModalBody>
                                             <ModalFooter>
-                                                <Button color="btn btn-outline-primary" onClick={()=>eliminarCliente(it.Id)}>Eliminar</Button>{' '}
+                                                <Button color="btn btn-outline-primary" onClick={()=>eliminarTicket(it.Id)}>Eliminar</Button>{' '}
                                                 <Button color="btn btn-outline-secondary" onClick={toggle}>Cancel</Button>
                                             </ModalFooter>
                                         </Modal>

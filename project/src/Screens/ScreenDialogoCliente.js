@@ -41,8 +41,8 @@ export function ScreenDialogoCliente(){
               </FormGroup>
             </ModalBody>
             <ModalFooter>
-              <Button type='submit'>Aceptar</Button>
-              <Button onClick={()=>Guardar(null)}>Cerrar</Button>
+              <Button type='submit' color="btn btn-outline-primary">Aceptar</Button>
+              <Button color="btn btn-outline-secondary" onClick={()=>Guardar(null)}>Cerrar</Button>
             </ModalFooter>
           </form>
         </Modal>
